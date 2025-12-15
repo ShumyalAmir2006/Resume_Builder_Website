@@ -543,3 +543,17 @@ init();
 document.getElementById("contactForm").addEventListener("submit", () => {
   alert("Thanks for contacting us! We'll get back to you soon.");
 });
+
+document.getElementById("exportBtn").addEventListener("click", () => {
+  const menu = document.getElementById("exportMenu");
+  menu.style.display = menu.style.display === "none" ? "block" : "none";
+});
+
+function downloadJSON() {
+  const data = localStorage.getItem("resumeData");
+  const blob = new Blob([data], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "resume-backup.json";
+  link.click();
+}
