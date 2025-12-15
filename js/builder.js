@@ -1,4 +1,18 @@
-function saveResume() {
+const skillInput = document.getElementById("skillInput");
+const skillsBox = document.getElementById("skills");
+
+skillInput?.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    const span = document.createElement("span");
+    span.textContent = skillInput.value;
+    skillsBox.appendChild(span);
+    skillInput.value = "";
+    save();
+  }
+});
+
+function save() {
   const data = {
     name: name.value,
     title: title.value,
@@ -6,31 +20,27 @@ function saveResume() {
     phone: phone.value,
     location: location.value,
     summary: summary.value,
-    skills: skills.value.split(",")
+    skills: [...skillsBox.children].map(s => s.textContent),
+    experience: experience.value,
+    education: education.value,
+    projects: projects.value
   };
   localStorage.setItem("resume", JSON.stringify(data));
-  alert("Saved!");
 }
 
-function goPreview() {
-  const data = JSON.parse(localStorage.getItem("resume") || "{}");
+function showPreview() {
+  const d = JSON.parse(localStorage.getItem("resume") || "{}");
 
-  pName.textContent = data.name || "";
-  pTitle.textContent = data.title || "";
-  pEmail.textContent = data.email || "";
-  pPhone.textContent = data.phone || "";
-  pLocation.textContent = data.location || "";
-  pSummary.textContent = data.summary || "";
-
-  pSkills.innerHTML = (data.skills || []).map(s =>
-    `<span>${s.trim()}</span>`
-  ).join(", ");
-
-  builderPage.style.display = "none";
-  previewPage.style.display = "block";
+  pName.textContent = d.name || "";
+  pTitle.textContent = d.title || "";
+  pContact.textContent = `${d.email || ""} | ${d.phone || ""} | ${d.location || ""}`;
+  pSummary.textContent = d.summary || "";
+  pSkills.innerHTML = (d.skills || []).map(s => `<span>${s}</span>`).join("");
+  pExperience.textContent = d.experience || "";
+  pEducation.textContent = d.education || "";
+  pProjects.textContent = d.projects || "";
 }
 
-function goBuilder() {
-  previewPage.style.display = "none";
-  builderPage.style.display = "block";
+function toggleTheme() {
+  document.body.classList.toggle("dark");
 }
