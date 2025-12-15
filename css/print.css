@@ -1,0 +1,31 @@
+@media print {
+  /* Hide all elements not part of the resume */
+  header.nav, .preview-actions, .container > .primary {
+    display: none !important;
+  }
+
+  /* Make the main resume content the only thing visible */
+  body, main {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Ensure the resume container takes up all space */
+  .resume {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    /* Ensure colors are black/white for printing */
+    color: #000 !important;
+  }
+
+  /* Ensure links are printed normally, not underlined or colored */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}

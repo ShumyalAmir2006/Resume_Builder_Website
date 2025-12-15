@@ -1,10 +1,284 @@
-@media print {
-  body * { visibility: hidden; }
-  #resume, #resume * { visibility: visible; }
-  #resume {
-    position: absolute;
-    left: 0;
-    top: 0;
+/* =========================================
+   1. Base & Utilities
+   ========================================= */
+:root {
+  --color-primary: #007bff; /* Blue */
+  --color-primary-dark: #0056b3;
+  --color-text: #333;
+  --color-background: #f8f9fa; /* Light Gray */
+  --color-card-bg: #fff;
+  --color-border: #ddd;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  --color-text: #e9ecef; /* Light Gray Text */
+  --color-background: #212529; /* Dark Background */
+  --color-card-bg: #343a40;
+  --color-border: #495057;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================================
+   2. Layout & Navigation
+   ========================================= */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--color-card-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav strong {
+  font-size: 1.5em;
+  color: var(--color-primary);
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav a:hover {
+  background-color: var(--color-border);
+  color: var(--color-primary-dark);
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+/* =========================================
+   3. Builder Components (Cards, Inputs, Buttons)
+   ========================================= */
+h1 {
+  margin: 20px 0;
+  color: var(--color-primary-dark);
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  border-top: 5px solid var(--color-primary);
+}
+
+.card h3 {
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: var(--color-primary-dark);
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea, input:not([type="file"]) {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Buttons */
+.primary, button.primary {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.primary:hover, button.primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+button:not(.primary) {
+  background-color: #6c757d; /* Secondary gray */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.2s;
+}
+
+button:not(.primary):hover {
+  background-color: #5a6268;
+}
+
+/* Skills Section */
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+}
+
+.skill-tag button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+}
+
+/* =========================================
+   4. Resume Preview (The Resume)
+   ========================================= */
+.resume {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: white; /* Always white for resume print look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.resume h1 {
+  color: var(--color-primary-dark);
+  margin-bottom: 5px;
+}
+
+.resume h2 {
+  color: #6c757d;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.resume p#pContact {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.resume section {
+  margin-bottom: 25px;
+}
+
+.resume section h3 {
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.resume #pSkills span {
+    display: inline-block;
+    background-color: #eee;
+    padding: 3px 8px;
+    margin: 0 8px 8px 0;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Preview Actions */
+.preview-actions {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.preview-actions button, .preview-actions a, .preview-actions select {
+    margin: 5px;
+}
+
+#templateSelect {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+}
+
+/* =========================================
+   5. Responsive Adjustments
+   ========================================= */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .nav nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav a, #themeToggle {
+    margin: 5px 10px;
+  }
+  .container {
     width: 100%;
+    padding: 0 10px;
+  }
+  .resume {
+    padding: 20px;
   }
 }
