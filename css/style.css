@@ -282,3 +282,69 @@ button:not(.primary):hover {
     padding: 20px;
   }
 }
+
+/* --- Export Page Specific Styles --- */
+
+.export-card {
+  /* Remove top border to be less intrusive on the export page */
+  border-top: none;
+  /* Add subtle glow/shadow to make it look clickable/important */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.1); 
+  margin-bottom: 20px;
+  text-align: center; /* Center content within the card */
+}
+
+.export-card h3 {
+    text-align: center;
+}
+
+.export-card p {
+    margin: 10px 0 20px 0;
+    color: #ccc;
+}
+
+.export-btn {
+    /* Larger and bolder for primary action */
+    padding: 15px 30px;
+    font-size: 1.1em;
+    width: auto; /* Allow button width to fit content */
+    display: inline-block;
+}
+
+.backup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.secondary-btn {
+    /* Custom style for backup/import buttons */
+    background-color: var(--color-border); /* Use border color for secondary button */
+    color: var(--color-text);
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    text-decoration: none;
+}
+
+.secondary-btn:hover {
+    background-color: #444;
+    border-color: #666;
+}
+
+.file-label {
+    /* Style the label to look exactly like a button */
+    display: inline-block;
+    line-height: normal; /* Fix alignment */
+    height: auto;
+}
+
+/* Ensure the primary button uses its defined style from previous step */
+.primary {
+    /* These styles should already be in style.css */
+    background-color: var(--color-primary);
+    color: white;
+}
