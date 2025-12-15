@@ -156,3 +156,38 @@ label{font-size:13px; color: var(--muted); font-weight:650; display:block; margi
   display: none !important; 
 }
 
+.about-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.about-section h2,
+.about-section h3 {
+  margin-bottom: 10px;
+}
+
+.about-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-section input,
+.about-section textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.about-section button {
+  background: #7b3fe4;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
