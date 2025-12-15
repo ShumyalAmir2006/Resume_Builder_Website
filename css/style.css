@@ -348,3 +348,72 @@ button:not(.primary):hover {
     background-color: var(--color-primary);
     color: white;
 }
+
+/* --- Add this to your existing css/style.css --- */
+
+/* 1. Enhanced Resume Body Styling */
+.resume {
+  /* Maintain the look of a clean document */
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: white; /* Crucial for a good print output */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow for contrast against black background */
+  color: #333;
+}
+
+.resume section h3 {
+    /* Use strong color for section headers */
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* 2. Enhanced Preview Actions Bar */
+.preview-actions {
+    /* Use the dark card background for the bar itself */
+    background-color: var(--color-card-bg); 
+    padding: 15px 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Shadow for lift */
+}
+
+/* Make the print button stand out */
+.action-print {
+    background-color: #28a745; /* Green for GO/Print */
+    font-weight: bold;
+    padding: 12px 25px;
+}
+
+.action-print:hover {
+    background-color: #1e7e34;
+}
+
+/* Style for the Template Selector */
+#templateSelect {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    /* Make the dropdown visually appealing in dark mode */
+}
+
+/* Re-use the secondary-btn class for the 'Edit Resume' link (defined in the export page section) */
+.secondary-btn {
+    background-color: var(--color-border);
+    color: var(--color-text);
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}

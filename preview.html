@@ -8,16 +8,53 @@
 </head>
 <body>
 
+<header class="nav">
+  <strong>ResumeBuilder</strong>
+  <nav>
+    <a href="index.html">Builder</a>
+    <a href="preview.html">Preview</a>
+    <a href="export.html">Export</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
 <main id="resume" class="resume template-1">
-  <h1 id="pName"></h1>
-  <h2 id="pTitle"></h2>
-  <p id="pContact"></p>
-  </main>
+  <h1 id="pName">Your Full Name</h1>
+  <h2 id="pTitle">Professional Title</h2>
+  <p id="pContact">Email | Phone | Location</p>
+
+  <section>
+    <h3>Summary</h3>
+    <p id="pSummary">A brief, compelling paragraph summarizing your professional background and goals.</p>
+  </section>
+
+  <section>
+    <h3>Skills</h3>
+    <div id="pSkills"><span>Skill 1</span><span>Skill 2</span></div>
+  </section>
+
+  <section>
+    <h3>Experience</h3>
+    <p id="pExperience">Job Title | Company | Dates<br>* Key achievement 1<br>* Key achievement 2</p>
+  </section>
+
+  <section>
+    <h3>Education</h3>
+    <p id="pEducation">Degree | Institution | Dates</p>
+  </section>
+
+  <section>
+    <h3>Projects</h3>
+    <p id="pProjects">Project Title | Link<br>* Description</p>
+  </section>
+</main>
 
 <div class="preview-actions">
-  <button onclick="window.print()">Print / Save PDF</button>
-  <select id="templateSelect"></select>
-  <a href="index.html">Edit</a>
+  <select id="templateSelect" title="Select Resume Template"></select>
+  <button class="primary action-print" onclick="window.print()">
+    🖨️ Print / Save PDF
+  </button>
+  <a href="index.html" class="secondary-btn">← Edit Resume</a>
 </div>
 
 <script src="js/store.js"></script>
