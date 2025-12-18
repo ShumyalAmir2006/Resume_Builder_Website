@@ -29,7 +29,7 @@
                     <h3>Password</h3>
                     <input type="password" class="inputarea" required>
                 </form>
-                <button>
+                <button onclick="signinuser()">
                     <a href="startbuilding.html" style="color: black; text-decoration: none;">Sign In</a>
                 </button>
                 <button>
@@ -38,6 +38,13 @@
             </section>
         </div>
     </main>
+    <script>
+        function signinuser(){
+            sessionStorage.setItem('isloggedin', 'true');
+            window.location.href = 'startbuilding.html';
+        }
+    </script>
+
 
 </body>
 

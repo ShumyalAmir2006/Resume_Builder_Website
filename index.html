@@ -89,7 +89,11 @@ GPA: 3.8/4.0 (Optional)
   <button class="primary" onclick="saveResume()">Save Resume</button>
 
 </main>
-
+<script>
+  if(!sessionStorage.getItem('isloggedin')) {
+    window.location.href = 'Signin.html';
+  }
+</script>
 <script src="js/store.js"></script>
 <script src="js/builder.js"></script>
 </body>

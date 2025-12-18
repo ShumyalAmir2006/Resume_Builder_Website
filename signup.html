@@ -50,6 +50,7 @@
             const errorMsg = document.getElementById('errorMsg');
 
             if (pass === confirmpass && pass !== '') {
+                sessionStorage.setItem('isloggedin', 'true');
                 window.location.href = 'startbuilding.html';
             }
             else {
