@@ -86,10 +86,14 @@ window.saveResume = function() {
         }
     });
     
-    // Get skills data
     resumeData.skills = window.getCurrentSkills ? window.getCurrentSkills() : [];
 
-    // Save the complete object
-    saveResume(resumeData);
-    alert("Resume Saved! You can now check the Preview.");
+    // Save directly to localStorage instead
+    try {
+        localStorage.setItem('resumeData', JSON.stringify(resumeData));
+        alert("Resume Saved! You can now check the Preview.");
+    } catch (e) {
+        console.error("Error saving:", e);
+        alert("Error saving data.");
+    }
 };
