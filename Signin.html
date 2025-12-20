@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Signin.html");
+    exit();
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +48,7 @@
         </div>
     </main>
     <script>
-        function signinuser(){
+        function signinuser() {
             sessionStorage.setItem('isloggedin', 'true');
             window.location.href = 'startbuilding.html';
         }

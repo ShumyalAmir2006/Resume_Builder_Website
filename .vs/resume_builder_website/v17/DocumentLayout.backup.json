@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Signin.html",
               "ToolTip": "I:\\resume_builder_website\\Signin.html",
               "RelativeToolTip": "Signin.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-12-20T18:17:25.261Z",
               "EditorCaption": ""
@@ -55,7 +55,8 @@
               "RelativeToolTip": "auth_login.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-20T18:16:48.909Z"
+              "WhenOpened": "2025-12-20T18:16:48.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -67,7 +68,8 @@
               "RelativeToolTip": "auth_signup.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-20T18:16:19.708Z"
+              "WhenOpened": "2025-12-20T18:16:19.708Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -79,7 +81,8 @@
               "RelativeToolTip": "signup.html",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-12-20T18:12:31.598Z"
+              "WhenOpened": "2025-12-20T18:12:31.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -91,7 +94,8 @@
               "RelativeToolTip": "db.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-20T18:11:35.689Z"
+              "WhenOpened": "2025-12-20T18:11:35.689Z",
+              "EditorCaption": ""
             }
           ]
         }
